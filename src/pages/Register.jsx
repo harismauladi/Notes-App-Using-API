@@ -28,7 +28,6 @@ function Register() {
       email: email,
       password: password,
     });
-    console.log(password);
   }, [password]);
 
   const onRegisterHandler = async () => {

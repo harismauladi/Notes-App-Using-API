@@ -23,7 +23,6 @@ function Login({ onLogin }) {
 
     if (!eror) {
       onLogin(data);
-      console.log("Succsess");
     }
   };
   return (
