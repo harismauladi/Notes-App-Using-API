@@ -1,6 +1,7 @@
 import React from "react";
 import Body from "../components/Body";
 import { getArchivedNotes } from "../utils/network-data";
+import PropTypes from "prop-types";
 
 class ArchivedNotes extends React.Component {
   constructor(props) {
@@ -46,5 +47,9 @@ class ArchivedNotes extends React.Component {
     );
   }
 }
+
+ArchivedNotes.propTypes = {
+  local: PropTypes.string.isRequired,
+};
 
 export default ArchivedNotes;

@@ -34,6 +34,7 @@ function AuthTamplate({ children, type, onClickHandler }) {
 AuthTamplate.propTypes = {
   children: PropTypes.array,
   type: PropTypes.string.isRequired,
+  onClickHandler: PropTypes.func.isRequired,
 };
 
 export default AuthTamplate;

@@ -25,5 +25,6 @@ function Searchbar({ isArchived, onSearchInput, local }) {
 Searchbar.propTypes = {
   isArchived: PropTypes.string.isRequired,
   onSearchInput: PropTypes.func.isRequired,
+  local: PropTypes.string.isRequired,
 };
 export default Searchbar;

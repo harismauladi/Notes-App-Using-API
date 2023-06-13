@@ -32,6 +32,7 @@ function NoteList({ note, loading }) {
 
 NoteList.propTypes = {
   note: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 export default NoteList;

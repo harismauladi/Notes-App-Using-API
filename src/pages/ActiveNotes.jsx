@@ -1,6 +1,7 @@
 import React from "react";
 import Body from "../components/Body";
 import { getActiveNotes } from "../utils/network-data";
+import PropTypes from "prop-types";
 
 class ActiveNotes extends React.Component {
   constructor(props) {
@@ -47,5 +48,8 @@ class ActiveNotes extends React.Component {
     );
   }
 }
+ActiveNotes.propTypes = {
+  local: PropTypes.string.isRequired,
+};
 
 export default ActiveNotes;
