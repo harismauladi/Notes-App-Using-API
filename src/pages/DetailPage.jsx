@@ -6,6 +6,7 @@ import NotFound from "./NotFound";
 import DeleteButton from "../elements/DeleteButton";
 import ArchiveButton from "../elements/ArchiveButton";
 import PropTypes from "prop-types";
+import IsLoading from "../elements/IsLoading";
 
 const DetailPageContainer = () => {
   const { id } = useParams();
@@ -18,6 +19,7 @@ class DetailPage extends React.Component {
     super(props);
     this.state = {
       data: {},
+      loading: true,
     };
   }
 
@@ -27,14 +29,19 @@ class DetailPage extends React.Component {
       this.setState(() => {
         return {
           data: data,
+          loading: false,
         };
       });
     }
   }
 
   render() {
-    if (this.state.data === undefined || this.props.id) {
+    if (this.state.data === null || this.props.id === null) {
       return <NotFound />;
+    }
+
+    if (this.state.loading) {
+      return <IsLoading />;
     }
 
     return (
