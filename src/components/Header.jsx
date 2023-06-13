@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ToggleTheme from "../elements/ToggleTheme";
 import ThemeContex from "../hooks/ThemeContex";
+import PropTypes from "prop-types";
 
 function Header({ logout, name, toggleLang, local }) {
   const { toggleTheme } = React.useContext(ThemeContex);
@@ -87,5 +88,12 @@ function Header({ logout, name, toggleLang, local }) {
     </header>
   );
 }
+
+Header.propTypes = {
+  logout: PropTypes.func.isRequired,
+  name: PropTypes.string,
+  toggleLang: PropTypes.func.isRequired,
+  local: PropTypes.string.isRequired,
+};
 
 export default Header;

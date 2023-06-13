@@ -22,5 +22,7 @@ Body.propTypes = {
   note: PropTypes.array.isRequired,
   type: PropTypes.string.isRequired,
   onSearchInput: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+  local: PropTypes.string.isRequired,
 };
 export default Body;
