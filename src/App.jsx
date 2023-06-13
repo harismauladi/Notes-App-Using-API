@@ -20,7 +20,7 @@ import ThemeContex from "./hooks/ThemeContex";
 function App() {
   const [auth, setAuthed] = useState(null);
   const [loading, isLoading] = useState(true);
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState(localStorage.getItem("theme"));
   const [local, setLocal] = useState("en");
 
   useEffect(() => {
@@ -56,9 +56,11 @@ function App() {
   };
 
   const toggleTheme = () => {
-    setTheme((prevState) => {
-      return prevState === "dark" ? "light" : "dark";
-    });
+    const newTheme = theme === "dark" ? "light" : "dark";
+
+    localStorage.setItem("theme", newTheme);
+
+    setTheme(newTheme);
   };
 
   const toggleLocal = () => {
